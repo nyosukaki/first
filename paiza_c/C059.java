@@ -6,35 +6,32 @@ public class Main {
        
         Scanner sc = new Scanner(System.in);
         int count = sc.nextInt();
-        int parity = 0;
-        String numbers = "";
-        String check = "";
+        sc.nextLine();
+        String[] parity = new String[count];
+        String[] check ={"","","",""};
+        String result = "";
         
         for(int i = 0; i < count; i++){
-            parity += sc.nextInt();
+            parity[i] = sc.nextLine();
         }
         
-        if(parity < 10000){
-            numbers = String.format("%04d", parity);
-            for(int i = 0; i < 4; i++){
-                if(Integer.parseInt(numbers.substring(i, i+1)) % 2 == 0){
-                    check += "0";
-                }else{
-                    check += "1";
-                }
-            }
-        }else{
-            numbers = String.format("%05d", parity);
-            for(int i = 0; i < 5; i++){
-                if(Integer.parseInt(numbers.substring(i, i+1)) % 2 == 0){
-                    check += "0";
-                }else{
-                    check += "1";
+        for(int i = 0; i < count; i++){
+            for(int y = 0; y < 4; y++){
+                if(parity[i].substring(y,y+1).equals("1")){
+                    check[y] += "1";
                 }
             }
         }
         
-        System.out.println(check);
+        for(int i = 0; i < 4; i++){
+          if(check[i].length() % 2 == 0){
+              result += "0";
+          }else{
+              result += "1";
+          }
+        }
+        
+        System.out.println(result);
         
     }
 }
