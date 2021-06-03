@@ -33,7 +33,7 @@ public class Main {
 		    map_reverse.put(entry.getValue(), entry.getKey());
 		}
         
-        // 連想配列から配列に変換するmap.values
+        // 連想配列から配列に変換するmap.values()
         List<Integer> list = new ArrayList<>(map.values());
         Collections.sort(list, Collections.reverseOrder());
         
