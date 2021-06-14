@@ -26,9 +26,6 @@ public class Main {
         line = line.replace(line.substring(3,5), String.format("%02d",day));
         line2 = line2.replace(line2.substring(0,2), String.format("%02d", hour));
         
-        
-        
-        
         System.out.println(line + " " +line2);
     }
 }
